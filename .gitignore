@@ -2,3 +2,4 @@ firmware/output/felps.ino.bin
 firmware/output/felps.ino.elf
 firmware/output/felps.ino.hex
 firmware/output/felps.ino.map
+tests/build/*

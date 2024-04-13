@@ -1,0 +1,27 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+      "major": 3,
+      "minor": 14,
+      "patch": 0
+    },
+    "configurePresets": [
+      {
+        "name": "build-tests",
+        "description": "Build for tests",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "gcc",
+          "CMAKE_CXX_COMPILER": "g++"
+        }
+      }
+    ],
+    "buildPresets": [
+      {
+        "name": "build-tests",
+        "configurePreset": "build-tests",
+        "targets": ["felps-tests"]
+      }
+    ]
+  }
