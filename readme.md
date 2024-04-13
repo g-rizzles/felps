@@ -1,15 +1,17 @@
 Using scripts in tools (assuming a WSL or other Linux environment):
-- Set FELPS_ROOT env variable with:
-  - `export FELPS_ROOT=$(wslpath -a .)/..` in `./tools` in a WSL session.
+- If running in WSL, set FELPS_ROOT env variable with:
+  - `export FELPS_ROOT=$(wslpath -a .)/..` in `./tools` if in a WSL session
+- If not running in WSL, set the env variable as normal
 - Build the latest version of the docker container with:
   - `./build-docker.sh`
 - Run the latest version of the container with:
   - `./run-docker`
 - In the container, build the latest .elf with:
   - `/opt/cmd.sh build`
+  - .elf, .hex, and .bin are written to `/workspace/felps/firmware/output` and are accessible
+    outside the container
 - In the container, clean the build directory with:
   - `/opt/cmd.sh clean`
-
 
 Research during development:
 - [SPI as write only](https://community.platformio.org/t/stm32f103-using-spi-in-transmit-only-mode/17997)
