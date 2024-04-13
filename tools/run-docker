@@ -1,0 +1,8 @@
+#!/bin/bash
+TAG="felps-docker:latest"
+FELPS_FIRMWARE_PATH=$FELPS_ROOT/firmware
+FELPS_VOL_NAME="/workspace/felps"
+echo $FELPS_FIRMWARE_PATH
+docker run -i \
+    -v "$FELPS_FIRMWARE_PATH:$FELPS_VOL_NAME" \
+    -t $TAG 
